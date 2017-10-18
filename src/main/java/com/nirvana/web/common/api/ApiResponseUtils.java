@@ -30,4 +30,8 @@ public class ApiResponseUtils {
         return response(Result.FAILURE.getCode(), Result.FAILURE.getDesc(), null);
     }
 
+    public static <T> ApiResponse<T> failure(BaseApiException ex) {
+        return response(ex.getErrorCode(), ex.getMsg(), null);
+    }
+
 }
